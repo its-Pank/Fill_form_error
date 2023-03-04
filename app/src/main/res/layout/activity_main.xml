@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<LinearLayout
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -28,125 +24,144 @@
                             android:textStyle="bold|italic"
                             android:textAllCaps="true"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="Enter your First Name :"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Please enter your First name "
-                            android:inputType="textCapSentences"
-                            android:id="@+id/f_name"/>
+                            android:hint="Enter your First Name :"
+                            android:layout_marginTop="15dp"
+                           android:id="@+id/fname_id"
+                            app:endIconMode="clear_text"
+                            app:counterEnabled="true"
+                            app:errorEnabled="true"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLength="15"
+                                    android:drawableStart="@drawable/baseline_person_24"
+                                    android:inputType="textCapSentences"
+                                  />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter your Last Name :"
+                            app:counterEnabled="true"
+                            app:errorEnabled="true"
+                            app:endIconMode="clear_text"
+                            android:layout_marginTop="15dp"
+                            android:id="@+id/lname_id"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/baseline_person_24"
+                                    android:maxLength="15"
+                                    android:inputType="textCapSentences"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter ph. no.  :"
+                            app:endIconMode="clear_text"
+                            android:layout_marginTop="15dp"
+                            app:counterEnabled="true"
+                            app:errorEnabled="true"
+                            app:prefixText="+91"
+                            android:id="@+id/pn_no"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/baseline_add_ic_call_24"
+                                    android:maxLength="10"
+                                    android:inputType="phone"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Alternative ph. no. :"
+                            android:layout_marginTop="15dp"
+                            app:endIconMode="clear_text"
+                            app:counterEnabled="true"
+                            app:errorEnabled="true"
+                            app:prefixText="+91"
+                            android:id="@+id/Al_phn"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLength="10"
+                                    android:drawableStart="@drawable/baseline_add_ic_call_24"
+                                    android:inputType="phone"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="D.O.B"
+                            app:endIconMode="clear_text"
+                            android:id="@+id/dob"
+                            android:layout_marginTop="15dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/baseline_date_range_24"
+                                    android:inputType="date"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter E-Mail ID  :"
+                            app:suffixText="gmail.com"
+                            android:id="@+id/e_mail"
+                            app:endIconMode="clear_text"
+                            android:layout_marginTop="15dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textEmailAddress"
+                                    android:drawableStart="@drawable/baseline_attach_email_24"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <TextView
+                            android:id="@+id/gender"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
-                            android:text="Enter your Last Name :"
+                            android:text="Gender"
                             android:textSize="20sp"
                             android:textStyle="bold" />
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Please enter your Last name "
-                            android:textAllCaps="true"
-                            android:inputType="textCapSentences"
-                            android:id="@+id/l_name"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="Enter ph. no.  :"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Please enter your persolan ph. no.  "
-                            android:inputType="phone"
-                            android:id="@+id/pn_no"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="Alternative ph. no. :"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Please enter your alternative ph. no.  "
-                            android:inputType="phone"
-                            android:id="@+id/Al_phn"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="Enter E-Mail ID  :"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Please enter your valid E-mail id   "
-                            android:inputType="textEmailAddress"
-                            android:id="@+id/e_mail"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="D.O.B"
-                            android:textSize="25sp"
-                            android:layout_marginTop="15dp"
-                            android:textStyle="bold"/>
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:inputType="date"
-                            android:hint="Enter D.O.B of this 01/01/999"
-                            android:id="@+id/dob"/>
 
                         <RadioGroup
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="15dp"
-                                    android:text="Gender"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold" />
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radioGroup">
 
                                 <RadioButton
+                                    android:id="@+id/male"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Male "
-                                    android:textSize="15sp" />
+                                    android:textSize="15sp"
+                                    android:onClick="radioButtonhandler"
+                                   />
 
                                 <RadioButton
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Female "
-                                    android:textSize="15sp" />
+                                    android:textSize="15sp"
+                                    android:id="@+id/female"/>
 
                                 <RadioButton
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Trans Gender "
-                                    android:textSize="15sp" />
+                                    android:textSize="15sp"
+                                    android:id="@+id/trns"/>
                         </RadioGroup>
 
                         <TextView
@@ -160,31 +175,36 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Programming "
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:id="@+id/ch_1"/>
 
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Study Nobles  "
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:id="@+id/ch_2"/>
 
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Watching movies, web serices "
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:id="@+id/ch_3"/>
 
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Traveling "
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:id="@+id/ch_4"/>
 
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Gaming "
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:id="@+id/ch_5"/>
 
                         <Button
                             android:layout_width="wrap_content"
@@ -196,48 +216,7 @@
                             android:layout_gravity="center"
                             android:id="@+id/btn_id"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="pleas check carefull all detailes "
-                            android:textSize="25sp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/full_name"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/ur_phn"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/ur_alphn"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/ur_email"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/ur_dob"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
                 </LinearLayout>
-        </ScrollView>
-</LinearLayout>
+</ScrollView>
+</layout>
